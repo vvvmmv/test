@@ -1,0 +1,135 @@
+{
+  "settings": {
+    "name": "Site 2025-11-13 10:42",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "recruiterm4",
+      "title": "RecruiterM4",
+      "styling": {
+        "primaryColor": "#4f2e53",
+        "secondaryColor": "#ff6666",
+        "successColor": "#40b0bf",
+        "infoColor": "#47b5ed",
+        "warningColor": "#FFE161",
+        "dangerColor": "#ff9966",
+        "mainFont": "Brygada 1918",
+        "display1Font": "Brygada 1918",
+        "display1Size": 8.75,
+        "display2Font": "Brygada 1918",
+        "display2Size": 4.4,
+        "display5Font": "Brygada 1918",
+        "display5Size": 2.5,
+        "display7Font": "Brygada 1918",
+        "display7Size": 1,
+        "display4Font": "Brygada 1918",
+        "display4Size": 0.9,
+        "isRoundedButtons": false,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": false,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      },
+      "additionalSetColors": []
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "6.1.9",
+    "siteFonts": [
+      {
+        "css": "'Brygada 1918', serif",
+        "name": "Brygada 1918",
+        "url": "https://fonts.googleapis.com/css?family=Brygada+1918:400,500,600,700,400i,500i,600i,700i"
+      }
+    ],
+    "imageResize": true,
+    "uniqCompNum": 4,
+    "versionPublish": "6.1.9",
+    "screenshot": "screenshot.png"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Home",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)",
+              "@media (max-width: 1000px)": {
+                "padding-top": "(@paddingTop * 0.5rem)",
+                "padding-bottom": "(@paddingBottom * 0.5rem)"
+              },
+              "@media (max-width: 768px)": {
+                "padding-top": "(@paddingTop * 0.3rem)",
+                "padding-bottom": "(@paddingBottom * 0.3rem)"
+              }
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when (@pattern)": {
+                "background-repeat": "repeat",
+                "background-size": "30px 30px"
+              }
+            },
+            ".f-row": {
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "center",
+              "@media (min-width: 992px)": {
+                "flex-direction": "row"
+              }
+            },
+            ".f-item": {
+              "flex": "1 1 100%",
+              "@media (min-width: 992px)": {
+                "flex": "1 1 50%"
+              }
+            },
+            ".image-wrapper": {
+              "height": "100%",
+              "@media (min-width: 992px)": {
+                "min-height": "650px"
+              }
+            },
+            ".image-wrapper img": {
+              "min-height": "100%",
+              "width": "100%",
+              "object-fit": "cover"
+            },
+            ".text-wrapper": {
+              "width": "100%",
+              "background": "@titleBackground",
+              "padding": "1rem 2rem",
+              "@media (min-width: 992px)": {
+                "padding": "3rem",
+                "transform": "translate(-12%, @blockPos * 1rem)"
+              },
+              "@media (min-width: 1200px)": {
+                "padding": "6rem 3.25rem"
+              }
+            }
+          },
+          "_name": "header1",
+          "_sourceTheme": "recruiterm4",
+          "_customHTML": "<section class=\"header1\" group=\"Headers\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n\t<mbr-parameters>\n\t\t\t<header>Size</header>\n\t\t\t<input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n\t\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t\t<input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"9\" condition=\"fullScreen == false\">\n\t\t\t<input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n\t\t\t<input type=\"range\" inline=\"\" title=\"Block position\" name=\"blockPos\" min=\"-5\" max=\"10\" step=\"1\" value=\"-5\" condition=\"fullScreen == false\">\n\t\t\t<header>Show/Hide</header>\n\t\t\t<input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked=\"\">\n            <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked=\"\">\n\t\t\t<input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n\t\t\t<header>Background</header>\n\t\t\t<input type=\"color\" title=\"Title background\" name=\"titleBackground\" value=\"#98dee8\">\n\t\t\t\t\t\t<fieldset type=\"background\" name=\"bg\">\n\t\t\t\t\t<input type=\"color\" title=\"Color\" value=\"#ffffff\">\n                    <input type=\"image\" title=\"Image\" value=\"../_images/dots.svg\" selected=\"\">\n\t\t\t</fieldset>\n            <input type=\"checkbox\" title=\"Pattern\" name=\"pattern\" condition=\"bg.type !== 'color'\" checked=\"\">\n\t\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n\t\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n\t\t\t<input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n\t</mbr-parameters>\n\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t\t<div class=\"f-row\">\n\t\t\t\t\t<div class=\"f-item\">\n\t\t\t\t\t\t\t<div class=\"image-wrapper\">\n\t\t\t\t\t\t\t\t\t<img src=\"../_images/mbr-1108x739.jpg\" alt=\"Mobirise\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"f-item\">\n\t\t\t\t\t\t\t<div class=\"text-wrapper\">\n\t\t\t\t\t\t\t\t\t<h1 class=\"mbr-section-title mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\">Right People of A Fund Adviser</h1>\n                                <p class=\"mbr-text mbr-fonts-style text-black\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\" data-app-placeholder=\"Type Text\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit blanditiis, consequatur dolorum nihil vitae eligendi, laboriosam recusandae possimus quasi dolor ex et aspernatur cum minus in natus? Earum velit facere totam minus nisi praesentium consequuntur at fugiat, pariatur ipsa sit blanditiis dicta laudantium porro, fugit obcaecati fuga sed minima consequatur unde distinctio itaque officiis.\n<br></p>\n\t\t\t\t\t\t\t\t\t<div mbr-buttons=\"\" mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-white-outline\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Get Started</a></div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t</div>\n\t</div>\n</section>",
+          "_cid": "v2qyj1MgvW",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header1-3"
+        }
+      ]
+    }
+  }
+}
